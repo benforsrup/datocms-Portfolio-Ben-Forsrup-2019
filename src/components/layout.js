@@ -49,7 +49,6 @@ const TemplateWrapper = ({ children }) => (
         seo={data.datoCmsHome.seoMetaTags}
       />
       <Header />
-      <Landing />
         {children}
       <Footer />
     </div>
@@ -57,8 +56,6 @@ const TemplateWrapper = ({ children }) => (
   />
 )
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.object,
-}
+
 
 export default TemplateWrapper
