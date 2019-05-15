@@ -9,23 +9,27 @@ export default class Contact extends React.Component {
         return (
             <StaticQuery query={graphql`
                 query contactQuery {
-                    contact:datoCmsAboutPage {
-                        title
-                        subtitle
-                        bio
-                      }
-                }
+                    contact: datoCmsContact {
+                        mainText
+                        email
+                        number
+                        
+                    }
+              }
             `}
                 render={data => {
                         const { contact } = data
                         return(
-                            <div className="about_container">
-                            <div className="about_content">
-                                <div className="about_text">
-                                   <Element name="contact"> <h1> {contact.title} </h1> </Element> 
-                                    <h2>{contact.subtitle}</h2>
-                                    <p >{contact.bio}</p>
-                            </div>
+                            <div className="contact_container">
+                                <div className="contact_content">
+                                    <div className="contact_text">
+                                    <Element name="contact"> <h1> {contact.mainText} </h1> </Element> 
+                                     <div className="contact_social">
+                                         <p>{contact.email}</p>
+                                         <p>{contact.number}</p> 
+                                         <a  className="contact_button">Download CV</a> 
+                                     </div> 
+                                    </div>
                             </div>
                         </div>
                         )    

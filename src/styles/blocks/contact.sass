@@ -1,0 +1,72 @@
+.contact_container
+    position: relative
+    margin-top: 2em 
+    left: 0
+    margin-left: 0
+    height: 40vh
+    width: 100%
+    .contact_content
+        position: relative
+        margin-top: 0
+        left: 0
+        margin-left: 0
+        width: 980px
+        display: flex
+        align-items: center
+        height: 100%
+        .contact_text
+            display: flex
+            width: 100%
+            margin-bottom: 5em
+            justify-content: space-between
+            align-items: center
+            color: $main-color
+            h1
+                font-size: 26px
+                font-weight: 600
+                margin: 0
+                
+            h2
+                font-weight: 200
+                font-size: 17px
+                &:after
+                    content: ' '
+                    width: 20%
+                    display: block
+                    margin: 1em auto
+                    height: 3px
+                    background-color: $main-color
+            p
+                line-height: 2em
+                font-weight: 200
+                font-size: 16px
+            .contact_social
+                padding-right: 100px
+                a
+                    text-decoration: none
+            .contact_button
+                background-color: white
+                padding: 1em
+                display: flex
+                justify-content: center
+                align-items:center
+                margin-top: 2em
+                border: 2px solid $main-color
+                border-radius: 20px
+                transition: .2s all
+                cursor: pointer
+                &:hover
+                    background-color: $main-color
+                    color: white
+
+
+
+
+@media screen and (min-width: 740px)
+    .contact_container
+        min-width: 980px
+        margin-left: 15px
+        .contact_content
+            margin: 0px 0px 0px calc((100% - 980px) * 0.5)
+                
+

@@ -14,7 +14,7 @@ header
         .header_intent
             width: 980px
             height: 75px
-            margin: 0p
+            margin: 0
             ul
                 display: flex
                 justify-content: flex-start
@@ -23,13 +23,16 @@ header
                 width: calc(100% - 0px)
                 height: calc(100% - 0px)
                 li
+                    cursor: pointer
                     padding: 10px
                     color: white
                     font-weight: 600
+                    &:hover
+                        color: rgba(255,255,255,0.8)
 
 @media screen and (min-width: 980px)
     header
-        min-width: 980px;
+        min-width: 980px
         .header_container
             .header_intent
                 margin: 0px 0px 0px calc((100% - 980px) * 0.5)
