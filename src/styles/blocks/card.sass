@@ -1,83 +1,110 @@
+.projects_container
+	
+	width: 100%
+	
+	
+.projects_title
+	width: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+	h1
+		padding: 1em 0
+		margin: 0
+		font-weight: 800
+		font-size: 33px
+	
 .card
-  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.08)
-  overflow: hidden;
-  border-radius: 10px
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.08)
+	overflow: hidden;
+	border-radius: 10px
 
 .card__image
-  display: block
-  position: relative
+	display: block
+	position: relative
 
-  img
-    display: block
+	img
+		display: block
 
-  &:before, &:after
-    position: absolute
-    z-index: 1
-    content: ""
-    opacity: 0
-    transition: opacity 0.2s ease-in-out
+	&:before, &:after
+		position: absolute
+		z-index: 1
+		content: ""
+		opacity: 0
+		transition: opacity 0.2s ease-in-out
 
-  &:before
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background-color: rgba(white, 0.7)
+	&:before
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(white, 0.7)
 
-  &:after
-    width: 80px
-    height: 80px
-    background-position: 50% 50%
-    background-repeat: no-repeat
-    background-size: contain
-    top: 50%
-    left: 50%
-    margin-left: -40px
-    margin-top: -40px
+	&:after
+		width: 80px
+		height: 80px
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: contain
+		top: 50%
+		left: 50%
+		margin-left: -40px
+		margin-top: -40px
 
-  &:hover
-    &:before
-      opacity: 1
+	&:hover
+		&:before
+			opacity: 1
 
-    &:after
-      opacity: .5
+		&:after
+			opacity: .5
 
 .card__caption
-  background-color: white
-  padding: 20px;
+	background-color: white
+	padding: 20px;
 
 .card__title
-  margin-bottom: 10px
+	margin-bottom: 10px
 
-  a
-    text-transform: uppercase
-    text-decoration: none
-    font-weight: bold
-    font-size: 16px
-    color: $dark-body-color
+	a
+		text-transform: uppercase
+		text-decoration: none
+		font-weight: bold
+		font-size: 16px
+		color: $dark-body-color
 
-    &:hover
-      border-bottom: dotted 1px #9055a2
+		&:hover
+			border-bottom: dotted 1px #9055a2
 
 .card_description
-  .card_description_title
-    width: 100%
-    display: flex
-    justify-content: center
-    padding: 1em
-    background-color: white
-    h2
-      color: $main-color
-      font-size: 22px
-      line-height: 1.4
-      padding: 0
-      margin: 0
-      font-weight: 600
-  .card_description_content
-    width: 100%
-    display: flex
-    justify-content: center
-    padding: 1em
-    background-color: white
-      
+	.card_description_title
+		width: 100%
+		display: flex
+		justify-content: center
+		padding: 1em
+		background-color: white
+		h2
+			color: $main-color
+			font-size: 22px
+			line-height: 1.4
+			padding: 0
+			margin: 0
+			font-weight: 600
+	.card_description_content
+		width: 100%
+		display: flex
+		justify-content: center
+		padding: 1em
+		background-color: white
+			
 
+@media screen and (min-width: 980px)
+	.projects_container
+		position: relative
+		margin-top: 0
+		left: 0
+		margin-left: 0
+		width: 100%
+		min-width: 980px
+		.projects_wrapper
+				width: 980px
+				margin: 0px 0px 0px calc((100% - 980px) * 0.5)
