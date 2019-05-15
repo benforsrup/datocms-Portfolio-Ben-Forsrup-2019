@@ -4,7 +4,6 @@ header
     left: 0;
     margin-left: 0;
     width: 100%;
-    min-width: 980px;
     .header_container  
         width: 100%
         background-color: $main-color
@@ -15,7 +14,7 @@ header
         .header_intent
             width: 980px
             height: 75px
-            margin: 0px 0px 0px calc((100% - 980px) * 0.5)
+            margin: 0p
             ul
                 display: flex
                 justify-content: flex-start
@@ -27,3 +26,10 @@ header
                     padding: 10px
                     color: white
                     font-weight: 600
+
+@media screen and (min-width: 980px)
+    header
+        min-width: 980px;
+        .header_container
+            .header_intent
+                margin: 0px 0px 0px calc((100% - 980px) * 0.5)

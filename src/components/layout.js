@@ -1,12 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
 import { HelmetDatoCms } from 'gatsby-source-datocms'
-
 import '../styles/index.sass'
-import Header from './Header';
-import Landing from './Landing';
 import Footer from './Footer';
 
 const TemplateWrapper = ({ children }) => (
@@ -48,7 +43,7 @@ const TemplateWrapper = ({ children }) => (
         favicon={data.datoCmsSite.faviconMetaTags}
         seo={data.datoCmsHome.seoMetaTags}
       />
-      <Header />
+     
         {children}
       <Footer />
     </div>

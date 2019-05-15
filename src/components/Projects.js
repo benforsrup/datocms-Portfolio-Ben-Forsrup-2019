@@ -2,6 +2,7 @@ import React from "react";
 import { Link, graphql, StaticQuery } from "gatsby";
 import Masonry from "react-masonry-component";
 import Img from "gatsby-image";
+import { Element  } from 'react-scroll'
 
 class Projects extends React.Component {
   render() {
@@ -34,7 +35,9 @@ class Projects extends React.Component {
             <div className="projects_container">
               <div className="projects_wrapper">
                 <div className="projects_title">
-                  <h1> My projects</h1>
+                    <Element name="projects" className="element">
+                    <h1> My projects</h1>
+                    </Element>
                 </div>
                 <Masonry className="showcase">
                   {data.allDatoCmsWork.edges.map(({ node: work }) => (
