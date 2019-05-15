@@ -30,9 +30,23 @@ export default class Landing extends React.Component {
                                 <Img 
                                 fluid={data.landing.landingImage.fluid}
                                 style={avatarStyle} />
-                                <p style={{fontSize:32, fontWeight:'900'}}>Hello there!</p>
-                                <p style={{fontSize:20, fontWeight:'600'}}>My name is <span style={{fontSize:32, fontWeight:'900'}}>Ben Forsrup</span></p>
-                                <p style={{fontSize:20, fontWeight:'700'}}>and I like to build nice looking stuff</p>
+                                <p style={{fontSize:32, 
+                                    fontWeight:'900', 
+                                    marginTop:'1em'}}>Hello there!</p>
+                                <p style={{fontSize:20, fontWeight:'600',marginTop:'.5em'}}>My name is <span style={{fontSize:32, fontWeight:'900'}}>Ben Forsrup</span></p>
+                                <p style={{marginTop:'1em', fontSize:20, fontWeight:'700'}}>and I like to build nice looking stuff</p>
+                                <p className="intro_text">{data.landing.introText}</p>
+                                <p className="sidebar__social">
+                                {this.props.socialProfiles.edges.map(({ node: profile }) => (
+                                <a
+                                    key={profile.profileType}
+                                    href={profile.url}
+                                    target="blank"
+                                    className={`social social--${profile.profileType.toLowerCase()}`}
+                                > </a>
+                                ))}
+                            </p>
+
                         </div>
                         </div>
                     </div>

@@ -3,12 +3,17 @@
   width: 35px
   height: 35px
   vertical-align: middle
-  border: 1px solid $border-color
+  border: 1px solid black
+  margin-right: 10px
   border-radius: 50%
   background-position: 50% 50%
   background-size: 40%
   background-repeat: no-repeat
   margin-bottom: 10px
+  transition: .1s all
+  &:hover
+    background-size: 50%
+    background-color: #7cffcb
 
 .social--facebook
   background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/facebook-f.svg')
@@ -22,6 +27,12 @@
 .social--email
   background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/envelope.svg')
 
+.social--github
+  background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/github.svg')
+
+.social--linkedin
+  background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/linkedin.svg')
+  
 @media screen and (min-width: 900px)
   .social
     width: 40px

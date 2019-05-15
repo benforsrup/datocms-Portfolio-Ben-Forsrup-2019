@@ -8,14 +8,33 @@ import Contact from '../components/Contact';
 
 
 
-const IndexPage = () => (
+const IndexPage = ({data}) => {
+  return(
   <Layout>
-    <Header />
-    <Landing />
-    <About />
-    <Projects />
-    <Contact />
-  </Layout>
-)
+      <Header />
+      <Landing socialProfiles={data.allDatoCmsSocialProfile} />
+      <About />
+      <Projects />
+      <Contact />
+    </Layout>
+  )
+}
+  
+
+
 
 export default IndexPage
+
+export const query = graphql`
+query IndexQuery
+{
+  allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
+    edges {
+      node {
+        profileType
+        url
+      }
+    }
+  }
+}
+`
