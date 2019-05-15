@@ -1,12 +1,16 @@
 import React from 'react'
-import Headroom from 'react-headroom'
 
 export default class Footer extends React.Component {
     render(){
         return(
-            <div>
-                wassaa
-            </div>
+                    <footer>
+                    <div className="footer_container">
+                        <div className="footer_intent">
+                            <p>© 2019 Ben Forsrup</p>
+                        </div>
+                    </div>
+                    </footer>
+            
         )
     }
 }

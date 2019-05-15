@@ -1,7 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
-import LandingContent from './LandingContent';
 
 const avatarStyle={
     width:150, height:150,

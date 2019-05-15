@@ -4,7 +4,6 @@ import Headroom from 'react-headroom'
 export default class Header extends React.Component {
     render(){
         return(
-            <div>
                 <Headroom>
                     <header>
                     <div className="header_container">
@@ -18,7 +17,6 @@ export default class Header extends React.Component {
                     </div>
                     </header>
                 </Headroom>
-            </div>
         )
     }
 }
