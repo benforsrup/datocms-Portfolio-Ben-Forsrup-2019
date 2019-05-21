@@ -11,7 +11,7 @@ import Contact from '../components/Contact';
 const IndexPage = ({data}) => {
   return(
   <Layout>
-      <Header />
+      {/* <Header /> */}
       <Landing socialProfiles={data.allDatoCmsSocialProfile} />
       <About />
       <Projects />

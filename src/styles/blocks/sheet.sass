@@ -1,9 +1,35 @@
 .sheet
-  padding: 40px 20px
   background-color: white
+  justify-content: center
+  align-items: center
+  display: flex
 
-.sheet__inner
-  max-width: 600px
+.sheet__headerContainer
+  height: 100vh
+  justify-content: center
+  align-items: center
+  display: flex
+  &.riksdagsviz
+    &.background
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+
+
+  &.newstag
+  &.kex
+  &.jengar
+  &.podtalk
+  &.vizstudent
+    background-color: green
+  &.vizgapm
+  &.lightsphere
+.sheet__inner__container
+  width: 100vw;
+  padding: 0 2em;
+  .sheet__inner__wrapper
+     
+
 
 .sheet__title
   font-size: 30px
@@ -12,9 +38,12 @@
   color: $dark-body-color
   line-height: 1
 
-.sheet__lead
+p.sheet__lead
   font-size: 16px
-  margin-bottom: 30px
+  text-align: center
+  margin: 3em 0
+  font-size: 2em
+  font-weight: 600
 
 .sheet__gallery,
 .sheet__slider
@@ -60,9 +89,15 @@
     font-size: 1.1em
     padding: 20px
 
-@media screen and (min-width: 900px)
+@media screen and (min-width: 980px)
   .sheet
-    padding: 40px 60px
+   
+  .sheet__inner
+    width: 100%
+  .sheet__inner__container
+    .sheet__inner__wrapper
+      width: 980px
+      margin: 0px 0px 0px calc((100% - 980px) * 0.5)
 
   .sheet__title
     font-size: 48px

@@ -16,6 +16,7 @@ class Projects extends React.Component {
                   id
                   title
                   slug
+                  shorthand
                   excerpt
                   coverImage {
                     fluid(
