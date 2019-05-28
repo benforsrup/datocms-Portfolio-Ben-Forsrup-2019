@@ -46,9 +46,9 @@ class Projects extends React.Component {
                       <div className="card">
                         <Link
                           to={`/works/${work.slug}`}
-                          className="card__image"
+                          
                         >
-                          <Img fluid={work.coverImage.fluid} />
+                          <Img className="card__image" fluid={work.coverImage.fluid} />
                           <div className="card_description">
                           <div className="card_description_title">
                             <h2>{work.title}</h2>
