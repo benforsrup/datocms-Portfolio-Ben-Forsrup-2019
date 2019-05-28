@@ -49,8 +49,7 @@ class Projects extends React.Component {
                           className="card__image"
                         >
                           <Img fluid={work.coverImage.fluid} />
-                        </Link>
-                        <div className="card_description">
+                          <div className="card_description">
                           <div className="card_description_title">
                             <h2>{work.title}</h2>
                           </div>
@@ -58,6 +57,8 @@ class Projects extends React.Component {
                             <h3>{work.excerpt}</h3>
                           </div>
                         </div>
+                        </Link>
+                        
                       </div>
                     </div>
                   ))}
