@@ -11,6 +11,7 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
 
 export default ({ data }) => {
+  console.log(data)
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,13 +36,14 @@ export default ({ data }) => {
       data.datoCmsWork.shorthand === "vizgapm" ||
       data.datoCmsWork.shorthand === "lightsphere"||
       data.datoCmsWork.shorthand === "jengar" ||
-      data.datoCmsWork.shorthand === "badplatser"
+      data.datoCmsWork.shorthand === "badplatser"||
+      data.datoCmsWork.shorthand === "podtalk"
   });
 
   let videoUrl ='https://www.datocms-assets.com/11860/1560093252-jengardemo.mp4' ;
   switch( data.datoCmsWork.shorthand){
     case 'jengar':
-      videoUrl  = 'https://www.datocms-assets.com/11860/1560095212-mov.mp4'
+      videoUrl  = 'https://www.datocms-assets.com/11860/1560100019-movtrimmed.mp4'
   }
 
   let imageStyle = {
@@ -90,7 +92,7 @@ export default ({ data }) => {
                   />  
                   <video 
                     className="mobile__template_video" 
-                    src={videoUrl} 
+                    src={data.datoCmsWork.mobileContent && data.datoCmsWork.mobileContent.url } 
                     autoPlay={true} 
                     controls={false} 
                     loop={true}
@@ -98,7 +100,7 @@ export default ({ data }) => {
                   <img 
                     className="mobile__template_top"
                     alt={data.datoCmsWork.title}
-                    src={data.datoCmsWork.mobileTop.url}
+                    src={data.datoCmsWork.mobileTop && data.datoCmsWork.mobileTop.url }
                   /> 
                   </div>
                   <h1 className={headerTitle + " cu"}>
@@ -218,6 +220,7 @@ export const query = graphql`
       }
       mobileContent {
         url
+        id
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
         }
