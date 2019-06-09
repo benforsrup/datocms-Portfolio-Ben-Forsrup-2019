@@ -52,7 +52,7 @@
     transition: .1s all
     &:hover
       background: $main-color
-      font-size: 4.2em
+      
       a 
         color: white
   
@@ -113,21 +113,67 @@ p.sheet__lead
 
 .mobile__container
   display: flex
-  flex-direction: row
+  flex-direction: column
   align-items: center
   .mobile__content_wrapper
+    position: relative
+    zoom: 60%
     .mobile__template
-      height: 500px
-      margin-right: 2em  
+      position: relative
+      z-index: 0
+      top: 0
+      left: 0
+      width: auto !important
+      right: 0
+      margin: 0 auto
+      // height: 500px
+    .mobile__template_top
+      position: absolute
+      left: 0
+      right: 0
+      margin: 0 auto
+      top: 25px
+      width: auto
+      z-index: 3
+    .mobile__template_video
+      overflow-y: auto
+      border: 0
+      margin: 0 auto
+      height: 812px
+      width: 375px
+      position: absolute
+      top: 25px
+      left: 0
+      right: 0
+      border-radius: 37px
+      z-index: 1
+
     .mobile__content
       position: absolute
       top: 0
       left: 0
       height: 500px
   .sheet__customHeader 
-      &:hover
-        font-size: 4em
+      margin-right: 0em
+      display: none
+      
+      &.cu
+        margin-top: 1em
+        display: block
 
+@media screen and (min-width: 452px)
+	.mobile__container
+    flex-direction: row
+    .mobile__content_wrapper
+      zoom: 60%
+    .sheet__customHeader 
+        margin-right: 1em
+        display: block
+        &.cu
+          display: none
+       
+    
+      
 
 
 @media screen and (min-width: 980px)
@@ -151,3 +197,7 @@ p.sheet__lead
 
     blockquote
       padding-left: 40px
+
+  .mobile__container
+    .mobile__content_wrapper
+      zoom: 90%

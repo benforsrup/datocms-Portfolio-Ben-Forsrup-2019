@@ -38,7 +38,11 @@ export default ({ data }) => {
       data.datoCmsWork.shorthand === "badplatser"
   });
 
-
+  let videoUrl ='https://www.datocms-assets.com/11860/1560093252-jengardemo.mp4' ;
+  switch( data.datoCmsWork.shorthand){
+    case 'jengar':
+      videoUrl  = 'https://www.datocms-assets.com/11860/1560095212-mov.mp4'
+  }
 
   let imageStyle = {
     backgroundImage:
@@ -72,14 +76,32 @@ export default ({ data }) => {
             <div className={headerContainer}>
               {isMobileApp ? (
                 <div className="mobile__container"> 
+                <h1 className={headerTitle}>
+                  <a
+                    href={data.datoCmsWork.urllink && data.datoCmsWork.urllink}>
+                      {data.datoCmsWork.title}
+                    </a>
+                  </h1>
                 <div className="mobile__content_wrapper">
                   <img 
                     className="mobile__template"
                     alt={data.datoCmsWork.title}
                     src={data.datoCmsWork.mobileTemplate.url}
                   />  
+                  <video 
+                    className="mobile__template_video" 
+                    src={videoUrl} 
+                    autoPlay={true} 
+                    controls={false} 
+                    loop={true}
+                    muted={true} />
+                  <img 
+                    className="mobile__template_top"
+                    alt={data.datoCmsWork.title}
+                    src={data.datoCmsWork.mobileTop.url}
+                  /> 
                   </div>
-                  <h1 className={headerTitle}>
+                  <h1 className={headerTitle + " cu"}>
                   <a
                     href={data.datoCmsWork.urllink && data.datoCmsWork.urllink}>
                       {data.datoCmsWork.title}
@@ -183,6 +205,12 @@ export const query = graphql`
         }
       }
       mobileTemplate {
+        url
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      mobileTop {
         url
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
