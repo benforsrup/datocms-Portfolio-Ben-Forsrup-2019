@@ -19,13 +19,15 @@ a
 		font-size: 33px
 	
 .card
-	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.08)
+	//box-shadow: 0 0 9px 0 rgba(255, 255, 255, 0.03)
+	border: 1px solid $dark-body-color
 	overflow: hidden;
-	border-radius: 10px
-	transition: .2s all
+	//border-radius: 10px
+	height: inherit
+	background: inherit
+	transition: background 0.2s ease-in
 	&:hover
-		box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.18)
-		transform: scale(1.02)
+		background: $dark-body-color
 
 
 .card__image
@@ -69,7 +71,7 @@ a
 			opacity: .5
 
 .card__caption
-	background-color: white
+	//background-color: white
 	padding: 20px;
 
 .card__title
@@ -80,7 +82,7 @@ a
 		text-decoration: none
 		font-weight: bold
 		font-size: 16px
-		color: $dark-body-color
+		color: $dark-text-color
 
 		&:hover
 			border-bottom: dotted 1px #9055a2
@@ -91,9 +93,9 @@ a
 		display: flex
 		justify-content: center
 		padding: 1em 1em 0.2em 1em
-		background-color: white
+		//background-color: white
 		h2
-			color: $main-color
+			color: $dark-text-color
 			font-size: 18px
 			line-height: 1.4
 			padding: 0
@@ -102,16 +104,17 @@ a
 	.card_description_content
 		width: 100%
 		display: flex
+		color: $dark-text-color
 		justify-content: center
 		padding: 1em
-		background-color: white
+		//background-color: white
 		h3
 			font-size: 14px
 			
 
 @media screen and (min-width: 412px)
 	.card__image
-		height: auto
+		height: 250px
 
 
 @media screen and (min-width: 980px)
