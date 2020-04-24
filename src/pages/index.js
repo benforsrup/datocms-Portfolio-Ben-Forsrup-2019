@@ -6,17 +6,22 @@ import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import { graphql } from 'gatsby'
-
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 const IndexPage = ({data}) => {
   return(
+    <ThemeToggler>
+        {({ theme, toggleTheme }) => (
+
   <Layout>
       {/* <Header /> */}
       <Landing socialProfiles={data.allDatoCmsSocialProfile} />
       <About />
       <Projects />
       <Contact />
-    </Layout>
+    </Layout>)}
+          </ThemeToggler>
+
   )
 }
   
