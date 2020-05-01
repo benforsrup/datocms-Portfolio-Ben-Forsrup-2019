@@ -1,45 +1,33 @@
-import React from 'react'
-import Layout from "../components/layout"
-import Header from '../components/Header';
-import Landing from '../components/Landing';
-import About from '../components/About';
-import Projects from '../components/Projects';
-import Contact from '../components/Contact';
-import { graphql } from 'gatsby'
-import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import React from "react";
+import Layout from "../components/layout";
+import Landing from "../components/Landing";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import { graphql } from "gatsby";
 
-const IndexPage = ({data}) => {
-  return(
-    <ThemeToggler>
-        {({ theme, toggleTheme }) => (
-
-  <Layout>
-      {/* <Header /> */}
+const IndexPage = ({ data }) => {
+  return (
+    <Layout>
       <Landing socialProfiles={data.allDatoCmsSocialProfile} />
       <About />
       <Projects />
       <Contact />
-    </Layout>)}
-          </ThemeToggler>
+    </Layout>
+  );
+};
 
-  )
-}
-  
-
-
-
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
-query IndexQuery
-{
-  allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
-    edges {
-      node {
-        profileType
-        url
+  query IndexQuery {
+    allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
+      edges {
+        node {
+          profileType
+          url
+        }
       }
     }
   }
-}
-`
+`;

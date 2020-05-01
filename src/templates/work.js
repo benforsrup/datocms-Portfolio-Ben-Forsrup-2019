@@ -11,7 +11,6 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
 
 export default ({ data }) => {
-  console.log(data)
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,9 +55,7 @@ export default ({ data }) => {
 
   const isMobileApp = !_.isEmpty(data.datoCmsWork.mobileTemplate);
 
-  const hasMobileContent = !_.isEmpty(data.datoCmsWork.mobileContent)
 
-  console.log(isMobileApp);
   return (
     <Layout>
       <article className={sheetStyle}>
@@ -220,7 +217,6 @@ export const query = graphql`
       }
       mobileContent {
         url
-        id
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
         }

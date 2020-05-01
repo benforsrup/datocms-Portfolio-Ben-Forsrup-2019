@@ -1,13 +1,13 @@
-import React from 'react'
-import { StaticQuery, graphql } from "gatsby"
-import { HelmetDatoCms } from 'gatsby-source-datocms'
-import '../styles/index.sass'
-import Footer from './Footer';
+import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import { HelmetDatoCms } from "gatsby-source-datocms";
+import "../styles/index.sass";
+import Footer from "./Footer";
+import { ThemeToggler } from "gatsby-plugin-dark-mode";
 
-const TemplateWrapper = ({ children }) => (
-  <StaticQuery query={graphql`
-    query LayoutQuery
-    {
+const TemplateWrapper = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
       datoCmsSite {
         globalSeo {
           siteName
@@ -36,21 +36,20 @@ const TemplateWrapper = ({ children }) => (
         }
       }
     }
-  `}
-  render={data => (
-    <div className="container">
-      <HelmetDatoCms
-        favicon={data.datoCmsSite.faviconMetaTags}
-        seo={data.datoCmsHome.seoMetaTags}
-      />
-     
-        {children}
-      <Footer />
-    </div>
-    )}
-  />
-)
+  `);
+  
+ return (
+  
+        <div className="container">
+          <HelmetDatoCms
+            favicon={data.datoCmsSite.faviconMetaTags}
+            seo={data.datoCmsHome.seoMetaTags}
+          />
+          
+          {children}
+          <Footer /> 
+        </div>
+ )
+}
 
-
-
-export default TemplateWrapper
+export default TemplateWrapper;

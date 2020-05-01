@@ -3,6 +3,7 @@
   width: 35px
   height: 35px
   vertical-align: middle
+  margin-top: 1em
   border: 1px solid white
   margin-right: 10px
   border-radius: 50%
@@ -11,9 +12,14 @@
   background-repeat: no-repeat
   margin-bottom: 10px
   transition: .1s all
+  .light &
+    border: 1px solid black
+    &:hover
+      background-color: #00ff9e
   &:hover
     background-size: 50%
     background-color: #253f35
+
 
 .social--facebook
   background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/white/svg/facebook-f.svg')
@@ -26,13 +32,17 @@
 
 .social--email
   background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/white/svg/envelope.svg')
+  .light & 
+      background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/envelope.svg')
 
 .social--github
   background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/white/svg/github.svg')
-
+  .light & 
+    background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/github.svg')
 .social--linkedin
   background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/white/svg/linkedin.svg')
-  
+  .light & 
+    background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/linkedin.svg')
 @media screen and (min-width: 900px)
   .social
     width: 40px
