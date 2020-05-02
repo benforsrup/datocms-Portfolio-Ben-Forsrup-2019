@@ -21,9 +21,9 @@ const items = [
 const secondItems = ["Hello there"];
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
+const trans1 = (x, y) => `translate3d(${x / 30 - 230 }px, ${y / 30 - 40}px,0)`;
 const trans2 = (x, y) => `translate3d(${x / 20}px, ${y / 20}px,0)`;
 const trans3 = (x, y) => `translate3d(${x / 10}px, ${y / 10}px,0)`;
-
 
 const Landing = ({ socialProfiles }) => {
   const data = useStaticQuery(graphql`
@@ -49,17 +49,19 @@ const Landing = ({ socialProfiles }) => {
       <div className="fullpage_content">
         <div className="fullpage_text">
           <div className="fullpage_avatar">
-            <ThemeToggler>
-              {({ theme, toggleTheme }) => (
+           
                 <div
                   className="hero_name"
-                  onClick={() =>
-                    toggleTheme(theme === "light" ? "dark" : "light")
-                  }
+                 
                   onMouseMove={({ clientX: x, clientY: y }) =>
                     set({ xy: calc(x, y) })
                   }
                 >
+                  <animated.div
+                    className="layer1"
+                    style={{ transform: props.xy.interpolate(trans1) }}/>
+                   
+
                   <animated.div
                     className="layer2"
                     style={{ transform: props.xy.interpolate(trans2) }}
@@ -72,28 +74,25 @@ const Landing = ({ socialProfiles }) => {
                   >
                     <h1>Ben Forsrup</h1>
                   </animated.div>
-
-                
                 </div>
-              )}
-            </ThemeToggler>
+             
           </div>
 
           <div className="social_wrapper">
-          <p className="intro_text">{data.landing.introText}</p>
-          <p className="sidebar__social">
-                      {socialProfiles.edges.map(({ node: profile }) => (
-                        <a
-                          key={profile.profileType}
-                          href={profile.url}
-                          target="blank"
-                          className={`social social--${profile.profileType.toLowerCase()}`}
-                        >
-                          {" "}
-                        </a>
-                      ))}
-                    </p>{" "}
-                    </div>
+            <p className="intro_text">{data.landing.introText}</p>
+            <p className="sidebar__social">
+              {socialProfiles.edges.map(({ node: profile }) => (
+                <a
+                  key={profile.profileType}
+                  href={profile.url}
+                  target="blank"
+                  className={`social social--${profile.profileType.toLowerCase()}`}
+                >
+                  {" "}
+                </a>
+              ))}
+            </p>{" "}
+          </div>
         </div>
       </div>
     </div>

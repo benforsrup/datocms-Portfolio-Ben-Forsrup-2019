@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 import "../styles/index.sass";
@@ -37,19 +37,28 @@ const TemplateWrapper = ({ children }) => {
       }
     }
   `);
-  
- return (
-  
-        <div className="container">
-          <HelmetDatoCms
-            favicon={data.datoCmsSite.faviconMetaTags}
-            seo={data.datoCmsHome.seoMetaTags}
-          />
-          
-          {children}
-          <Footer /> 
-        </div>
- )
-}
+
+  return (
+    <div className="container">
+      <HelmetDatoCms
+        favicon={data.datoCmsSite.faviconMetaTags}
+        seo={data.datoCmsHome.seoMetaTags}
+      />
+      <ThemeToggler>
+        {({ theme, toggleTheme }) => (
+          <div
+            className="themeToggler_wrapper"
+            onClick={() => toggleTheme(theme === "light" ? "dark" : "light")}
+          >
+            <div className="themeToggler" />
+          </div>
+        )}
+      </ThemeToggler>
+
+      {children}
+      <Footer />
+    </div>
+  );
+};
 
 export default TemplateWrapper;

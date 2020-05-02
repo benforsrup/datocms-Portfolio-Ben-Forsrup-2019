@@ -45,11 +45,13 @@
   line-height: 1
   cursor: pointer
   &.sheet__customHeader 
-    background: white
+    background: var(--bg)
     padding: 0.5em
     box-sizing: border-box
     border: 10px solid $main-color
     transition: .1s all
+    &.light
+      background: white
     &:hover
       background: $main-color
       
@@ -85,7 +87,7 @@ p.sheet__lead
   h1, h2, h3, h4, h5, h6
     font-weight: bold
     margin-top: 40px
-    color: $dark-body-color
+    // color: $dark-body-color
 
   h1
     font-size: 3em

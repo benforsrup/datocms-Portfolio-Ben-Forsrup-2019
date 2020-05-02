@@ -3,6 +3,31 @@
   width: 100vw
   overflow: hidden
 
+
+.themeToggler_wrapper
+  position: absolute
+  right: 0
+  top: 0
+  padding: 1em
+  z-index: 100
+  cursor: pointer
+  .themeToggler
+    width: 30px
+    height: 30px
+    background-color: green
+    mask-image: url('../../static/lightbulb-solid.svg')
+    mask-repeat: no-repeat
+    mask-size: contain
+    mask-position: center
+    -webkit-mask-image: url('../../static/lightbulb-solid.svg')
+    -webkit-mask-repeat: no-repeat
+    -webkit-mask-size: contain
+    -webkit-mask-position: center;
+    .light &
+      -webkit-mask-image: url('../../static/lightbulb-regular.svg')
+      mask-image: url('../../static/lightbulb-regular.svg')
+
+
 .container__sidebar
   box-sizing: border-box
   width: 200px
